@@ -23,9 +23,9 @@
         <h1>Mes projets</h1>
         <div>
             <div class="ligne">
-                <img src="LOGO.png" data-toggle="modal" data-target="#modal_plante" alt="Plante connectée">
-                <img src="LOGO.png" data-toggle="modal" data-target="#modal_CV" alt="Site CV">
-                <img src="LOGO.png" data-toggle="modal" data-target="#modal_infra" alt="Infrastructure et réseaux">
+                <img src="logo.png" data-toggle="modal" data-target="#modal_plante" alt="Plante connectée">
+                <img src="logo.png" data-toggle="modal" data-target="#modal_CV" alt="Site CV">
+                <img src="logo.png" data-toggle="modal" data-target="#modal_infra" alt="Infrastructure et réseaux">
             </div>
         </div>
 

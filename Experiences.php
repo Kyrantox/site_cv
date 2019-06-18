@@ -66,8 +66,8 @@
     <div class="categorie ligne" id="exp">
         <div id="exp_pro">
             <h1>Mes expériences profesionnelles</h1>
-            <img src="Logo.png" data-toggle="modal" data-target="#modal_gamned" alt="Gamned">
-            <img src="LOGO.png" data-toggle="modal" data-target="#modal_travail" alt="Inspection du travail">
+            <img src="logo.png" data-toggle="modal" data-target="#modal_gamned" alt="Gamned">
+            <img src="logo.png" data-toggle="modal" data-target="#modal_travail" alt="Inspection du travail">
         </div>
     </div>
 

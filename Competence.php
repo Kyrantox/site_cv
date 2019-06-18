@@ -24,29 +24,29 @@
     <h1>Compétences</h1>
     <div class="ligne">
         <div class="col">
-            <a href="#"><img src="LOGO.png" alt="HTML/CSS"></a>
+            <a href="#"><img src="logo.png" alt="HTML/CSS"></a>
             <h2>HTML/CSS</h2>
         </div>
         <div class="col">
-            <a href="#"><img src="LOGO.png" alt="PHP"></a>
+            <a href="#"><img src="logo.png" alt="PHP"></a>
             <h2>PHP</h2>
         </div>
         <div class="col">
-            <a href="#"><img src="LOGO.png" alt="Javascript"></a>
+            <a href="#"><img src="logo.png" alt="Javascript"></a>
             <h2>Javascript</h2>
         </div>
     </div>
     <div class="ligne">
         <div class="col">
-            <a href="#"><img src="LOGO.png" alt="C"></a>
+            <a href="#"><img src="logo.png" alt="C"></a>
             <h2>C</h2>
         </div>
         <div class="col">
-        <a href="#"><img src="LOGO.png" alt="Python"></a>
+        <a href="#"><img src="logo.png" alt="Python"></a>
         <h2>python</h2>
         </div>
         <div class="col">
-        <a href="#"><img src="LOGO.png" alt="Infrastructure et réseaux"></a>
+        <a href="#"><img src="logo.png" alt="Infrastructure et réseaux"></a>
         <h2>Infrastructure et réseaux</h2>
         </div>
     </div>
