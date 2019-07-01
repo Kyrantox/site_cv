@@ -13,7 +13,22 @@
 <body>
 
 <header>
+<<<<<<< HEAD
     <!--navbar-->
+=======
+    <!--<div class="hero-area">
+        <div class="row" id="hero">
+            <div class="hero-main">
+                <div class="hero-img"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-header">
+        <?php
+        //include('nav.php');
+        ?>
+    </div>-->
+>>>>>>> 6ef1b5a20a833dd7670c0e6a1f390a9e8e7f13bd
     <?php
     include('nav.php');
     ?>
