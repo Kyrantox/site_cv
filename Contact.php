@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+require_once('db.php');
+
+
+if(isset($_POST['send'])) {
+    $rqtMessage = "INSERT INTO messages(`prenom`, `nom`, `mail`, `telephone`, `message`) VALUES (?, ?, ?, ?, ?)";
+    require_once('db.php');
+    $stmtMessage = $pdo->prepare($rqtMessage);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $nom = htmlspecialchars($_POST['nom']);
+    $mail = htmlspecialchars($_POST['mail']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $message = htmlspecialchars($_POST['message']);
+    $stmtMessage->execute(array($prenom, $nom, $mail, $phone, $message));
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,21 +38,21 @@
 </header>
 <main>
 <div class="bloc">
-    <form action="/le_truc_en_php.php">
+    <form action="Contact.php" method="post">
         <div class="lignec">
             <div class="col-25">
-                <label for="prénom">Prénom</label>
+                <label for="prenom">Prénom *</label>
             </div>
             <div class="col-75">
-                <input type="text" id="prénom" name="prénom" placeholder="Votre prénom...">
+                <input type="text" id="prénom" name="prenom" placeholder="Votre prénom..." required>
             </div>
         </div>
         <div class="lignec">
             <div class="col-25">
-                <label for="nom">Nom</label>
+                <label for="nom">Nom *</label>
             </div>
             <div class="col-75">
-                <input type="text" id="nom" name="nom" placeholder="Votre nom...">
+                <input type="text" id="nom" name="nom" placeholder="Votre nom..." required>
             </div>
         </div>
         <div class="lignec">
@@ -40,7 +60,7 @@
                 <label for="mail">E-mail</label>
             </div>
             <div class="col-75">
-                <input type="text" id="mail" name="mail" placeholder="Votre mail...">
+                <input type="email" id="mail" name="mail" placeholder="Votre mail...">
             </div>
         </div>
         <div class="lignec">
@@ -48,19 +68,19 @@
                 <label for="numero">Numéro de téléphone</label>
             </div>
             <div class="col-75">
-                <input type="text" id="numero" name="numero" placeholder="Votre numéro...">
+                <input type="tel" id="numero" name="phone" placeholder="Votre numéro...">
             </div>
         </div>
         <div class="lignec">
             <div class="col-25">
-                <label for="sujet">Message</label>
+                <label for="sujet">Message *</label>
             </div>
             <div class="col-75">
-                <textarea id="sujet" name="sujet" placeholder="Votre message..." style="height:200px"></textarea>
+                <textarea id="sujet" name="name" placeholder="Votre message..." style="height:200px" required></textarea>
             </div>
         </div>
         <div class="lignec">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="bouton_propre" name="send">
         </div>
     </form>
 </div>

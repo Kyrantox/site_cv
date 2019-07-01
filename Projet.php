@@ -1,3 +1,19 @@
+<?php
+session_start();
+require_once('db.php');
+
+$rqtP = "SELECT * FROM projet";
+
+$stmt = $pdo->prepare($rqtP);
+$stmt->execute();
+
+$rqtM = "SELECT * FROM modaux";
+
+$stmtM = $pdo->prepare($rqtM);
+$stmtM->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,75 +39,36 @@
         <h1>Mes projets</h1>
         <div>
             <div class="ligne">
-                <img src="logo.png" data-toggle="modal" data-target="#modal_plante" alt="Plante connectée">
-                <img src="logo.png" data-toggle="modal" data-target="#modal_CV" alt="Site CV">
-                <img src="logo.png" data-toggle="modal" data-target="#modal_infra" alt="Infrastructure et réseaux">
+                <?php
+                while($c = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    echo "<img src='" . $c['logo'] . "' alt='" . $c['alt'] . "' data-toggle='modal' data-target='" . $c['data_target'] . "'/>";
+                }
+                ?>
+
             </div>
         </div>
 
-        <!-- Ici voici un premier modal. Copie/colle le pour en faire de nouveaux, en changeant l'id et en reliant à tes logos-->
-        <div class="modal fade" id="modal_plante" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Plante connectée</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Ce projet consiste à rendre automatique l'entretien d'une plante via des capteurs et d'autres engins permettant de répondre aux besoins de la plantes
-                        (actuateur, etc...). Les différents appareils sont dirigé par une carte arduino qui donne des directives celon une base de données.
-                        Ce projet souligne donc une maîtrise du langage C.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="modal_CV" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Site CV</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Ce projet est tout simplement le site sur lequel vous êtes actuellement.
-                        Il constiste à donner accés à toutes les informations me concernant qu'ont besoin les employeurs.
-                        Ce projet souligne donc une maîtres des différents langage web.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal fade" id="modal_infra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Infrastructure et réseaux</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        Ce projet consiste à simuler la création d'une infrastructure réseaux d'une entreprise.
-                        J'ai donc simulé l'infrastructure sur des machines virtuelles via VMWare.
-                        Ce projet souligne donc une maîtrise de l'infrastructure réseaux et une maîtrise de logiciel de virtualisation.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+        while($c = $stmtM->fetch(PDO::FETCH_ASSOC)){
+            echo "<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' id='" .  $c['id_mod'] ."'>";
+            echo "<div  class='modal-dialog modal-dialog-centered' role='document'>";
+            echo "<div class='modal-content'>";
+            echo "<div class='modal-header'>";
+            echo "<h5 class='modal-title'>" . $c['titre'] . "</h5>";
+            echo "<button type='button' class='close' data-dismiss='modal' aria-label='Close'>";
+            echo "<span aria-hidden='true'>x</span>";
+            echo "</button>";
+            echo "</div>";
+            echo "<div class='modal-body'>" . $c['contenu'] . "</div>";
+            echo "<div class='modal-footer'>";
+            echo "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+        ?>
     </div>
 
 </main>
