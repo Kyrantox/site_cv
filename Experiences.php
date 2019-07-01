@@ -1,12 +1,12 @@
 <?php
 session_start();
 require_once('db.php');
-
+/* On fait une requête pour afficher toute les expériences  */
 $rqtE = "SELECT * FROM experience_pro";
 
 $stmt = $pdo->prepare($rqtE);
 $stmt->execute();
-
+/* On fait une requête pour afficher tout les modaux */
 $rqtM = "SELECT * FROM modaux";
 
 $stmtM = $pdo->prepare($rqtM);
@@ -29,6 +29,7 @@ $stmtM->execute();
 <body>
 
 <header>
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
@@ -39,7 +40,7 @@ $stmtM->execute();
     <div class="categorie ligne" id="exp">
         <div id="exp_pro">
             <h1>Mes expériences profesionnelles</h1>
-
+            <!-- On affiche l'image de l'expérience -->
             <?php
             while($c = $stmt->fetch(PDO::FETCH_ASSOC)){
                 echo "<img src='" . $c['logo'] . "' alt='" . $c['alt'] . "' data-toggle='modal' data-target='" . $c['data_target'] . "'/>";
@@ -48,7 +49,7 @@ $stmtM->execute();
 
         </div>
     </div>
-
+    <!-- On affiche les modaux des expériences-->
     <?php
     while($c = $stmtM->fetch(PDO::FETCH_ASSOC)){
         echo "<div class='categorie'>";
@@ -72,7 +73,7 @@ $stmtM->execute();
     }
     ?>
 </main>
-
+<!-- Footer -->
 <?php
     include('footer.php');
 ?>

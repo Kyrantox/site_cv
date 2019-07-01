@@ -11,22 +11,25 @@ else{
     <html lang="fr">
 
     <head>
+        <!-- head -->
         <?php
         include("head.php");
         ?>
     </head>
 
     <body>
+    <!-- Inclusion de modproj-->
     <?php
     require_once("modProj.php");
     ?>
     <header>
+        <!-- navbar -->
         <?php include("nav_admin.php"); ?>
     </header>
 
     <main>
         <h1>Gérer les projets</h1>
-
+        <!-- On supprime un projet -->
         <div class="suppcomp">
             <h2>Supprimer un projet</h2>
             <form method="post" class="row" action="admin_projet.php">
@@ -50,7 +53,7 @@ else{
             }
             ?>
         </div>
-
+        <!-- On modifie un projet -->
         <div class="modifcomp">
             <h2>Modifier un projet</h2>
             <form action="admin_projet.php" method="post" enctype="multipart/form-data">
@@ -103,7 +106,7 @@ else{
             }
             ?>
         </div>
-
+        <!-- On ajoute un projet -->
         <div class="ajoutcomp">
             <h2>Ajouter un projet</h2>
             <form method="post" action="admin_projet.php" enctype="multipart/form-data">

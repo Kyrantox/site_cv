@@ -9,29 +9,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <!--<script src="menu.js"></script>-->
 </head>
 <body>
 
 <header>
-    <!--<div class="hero-area">
-        <div class="row" id="hero">
-            <div class="hero-main">
-                <div class="hero-img"></div>
-            </div>
-        </div>
-    </div>
-    <div class="nav-header">
-        <?php
-        //include('nav.php');
-        ?>
-    </div>-->
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
 </header>
 
 <main>
+    <!-- Une simple div pour montrer mon nom et mon "statut"-->
     <div class="ligne" id="intro1">
         <div id="intro">
             <p id="prenom">SEGUIN Ghislain</p>
@@ -40,7 +29,7 @@
             </div>
         </div>
     </div>
-
+<!-- Un texte de bienvenue, il ne sert qu'a introduire le site -->
     <div class="categorie_texte">
         <h1>Bienvenue</h1>
         <p> Bienvenue sur mon site CV, je m'appelle SEGUIN Ghislain. Je suis actuellement étudiant en première année d'informatique à Ynov Aix-en-Provence.
@@ -48,15 +37,17 @@
             </p>
     </div>
 <div class="ligne">
+    <!-- Ce bouton redirige vers à propos -->
     <div class="bouton">
         <button class="bouton_propre" type="button" href="#" target="_blank">A propos</button>
     </div>
+    <!-- Ce bouton redirige vers Portfolio -->
     <div class="bouton">
         <button class="bouton_propre" type="button" href="#" target="_blank">Portfolio</button>
     </div>
 </div>
 </main>
-
+<!-- Footer -->
 <?php
     include('footer.php');
 ?>

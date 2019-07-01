@@ -11,6 +11,7 @@ else{
     <html lang="fr">
 
     <head>
+        <!-- head -->
         <?php
         include("head.php");
         ?>
@@ -18,12 +19,13 @@ else{
 
     <body class="admin">
     <header>
+        <!-- navbar -->
         <?php include("nav_admin.php"); ?>
     </header>
 
     <main>
         <h1>Messages reçus</h1>
-
+        <!-- On récupère les messgaes reçus dans la base de données -->
         <?php
         $rqt = $pdo->prepare('SELECT * FROM messages');
         $rqt->execute();

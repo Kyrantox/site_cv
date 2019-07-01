@@ -4,6 +4,7 @@ if(isset($_SESSION['mdp'])) {
         if ($_POST['SuppComp'] == "") {
             $_POST['SuppComp'] = NULL;
         }
+        /* On supprime une éxpérience */
         if (isset($_POST['SuppComp'])) {
             $idComp = $_POST['SuppComp'];
             $rqt = $pdo->prepare('SELECT libelle FROM experience_pro WHERE id_exp_pro = ?');
@@ -23,7 +24,7 @@ if(isset($_SESSION['mdp'])) {
             $SuppMsg = '<script>alert("Aucun projet à supprimer n\'a été sélectionné")</script>';
         }
     }
-
+    /* On modifie une expérience */
     if (isset($_POST['submitModComp'])) {
         if ($_POST['modifCompName'] == "") {
             $_POST['modifCompName'] = NULL;
@@ -111,7 +112,7 @@ if(isset($_SESSION['mdp'])) {
                 }
             }
         }
-
+        /* Les messages de "Log" */
         $messageMod = "";
         if (isset($messageModName)) {
             $messageMod = $messageMod . $messageModName;
@@ -142,7 +143,7 @@ if(isset($_SESSION['mdp'])) {
         $messageMod = "Veuillez sélectionner une compétence à modifier.";
     }
 
-
+    /* Ajout d'expérience */
     if (isset($_POST['submitAddComp'])) {
         if ($_POST['AddCompAlt'] == "") {
             $_POST['AddCompAlt'] = NULL;

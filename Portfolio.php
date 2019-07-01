@@ -12,11 +12,13 @@
 </head>
 <body>
 <header>
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
 </header>
 <main>
+    <!-- Flipcard me permettant d'aller vers Experiences -->
 <div class="categorie ligne">
     <button class="flip-card" onclick="window.location.href='Experiences.php'">
         <div class="flip-card-inner">
@@ -29,6 +31,7 @@
             </div>
         </div>
     </button>
+    <!-- Flipcard me permettant d'aller vers Projet -->
     <button class="flip-card" onclick="window.location.href='Projet.php'">
         <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -42,7 +45,7 @@
     </button>
 </div>
 </main>
-
+<!-- Footer -->
 <?php
     include('footer.php');
 ?>

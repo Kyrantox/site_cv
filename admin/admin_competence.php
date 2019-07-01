@@ -11,22 +11,25 @@ require_once('db.php');
 <html lang="fr">
 
 <head>
+    <!-- head -->
     <?php
     include("head.php");
     ?>
 </head>
 
 <body class="admin">
+<!-- On inclut modComp -->
 <?php
 require_once("modComp.php");
 ?>
 <header>
+    <!-- navbar -->
     <?php include("nav_admin.php"); ?>
 </header>
 
 <main>
     <h1>Gérer les compétences</h1>
-
+    <!-- On supprime une compétence -->
     <div class="suppcomp">
         <h2>Supprimer une compétence</h2>
         <form method="post" class="row" action="admin_competence.php">
@@ -50,7 +53,7 @@ require_once("modComp.php");
         }
         ?>
     </div>
-
+    <!-- On modifie une compétence -->
     <div class="modifcomp">
         <h2>Modifier une compétence</h2>
         <form action="admin_competence.php" method="post" enctype="multipart/form-data">
@@ -109,7 +112,7 @@ require_once("modComp.php");
         }
         ?>
     </div>
-
+    <!-- On ajoute une compétence -->
     <div class="ajoutcomp">
         <h2>Ajouter une compétence</h2>
         <form method="post" action="admin_competence.php" enctype="multipart/form-data">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('db.php');
-
+/*On fait deux requêtes qui affichent toute les compétences selon leurs types */
 $rqtUC1 = "SELECT * FROM competence WHERE id_type=1";
 $rqtUC2 = "SELECT * FROM competence WHERE id_type=2";
 
@@ -28,6 +28,7 @@ $stmt2->execute();
 <body>
 
 <header>
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
@@ -38,7 +39,7 @@ $stmt2->execute();
 <div id="competences">
     <h1>Compétences</h1>
     <div class="ligne">
-
+    <!-- On afficher les compétences -->
     <?php
     while($c = $stmt1->fetch(PDO::FETCH_ASSOC)){
         echo "<div class='col'>";
@@ -52,6 +53,7 @@ $stmt2->execute();
 
 <div id="certification">
     <h1>Certifications</h1>
+    <!-- on affiche les Certification -->
     <?php
     while($c = $stmt2->fetch(PDO::FETCH_ASSOC)){
         echo "<a href='" . $c['href'] . "' target='_blank'>";
@@ -62,7 +64,7 @@ $stmt2->execute();
 </div>
 
 </main>
-
+<!-- Footer-->
 <?php
     include('footer.php');
 ?>

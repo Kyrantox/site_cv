@@ -4,6 +4,7 @@ if(isset($_SESSION['mdp'])) {
         if ($_POST['SuppComp'] == "") {
             $_POST['SuppComp'] = NULL;
         }
+        /* On supprime la compétence */
         if (isset($_POST['SuppComp'])) {
             $idComp = $_POST['SuppComp'];
             $rqt = $pdo->prepare('SELECT libelle FROM competence WHERE id_competence = ?');
@@ -20,7 +21,7 @@ if(isset($_SESSION['mdp'])) {
             $SuppMsg = '<script>alert("Aucune compétence à supprimer n\'a été sélectionnée")</script>';
         }
     }
-
+    /* Ici on modifie la compétence */
     if (isset($_POST['submitModComp'])) {
         if ($_POST['modifCompName'] == "") {
             $_POST['modifCompName'] = NULL;
@@ -80,7 +81,7 @@ if(isset($_SESSION['mdp'])) {
                 }
             }
         }
-
+        /* Les messages de "log" */
         $messageMod = "";
         if (isset($messageModName)) {
             $messageMod = $messageMod . $messageModName;
@@ -106,7 +107,7 @@ if(isset($_SESSION['mdp'])) {
         $messageMod = "Veuillez sélectionner une compétence à modifier.";
     }
 
-
+    /* Ajouts de compétence */
     if (isset($_POST['submitAddComp'])) {
         if ($_POST['AddCompAlt'] == "") {
             $_POST['AddCompAlt'] = NULL;

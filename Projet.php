@@ -1,12 +1,12 @@
 <?php
 session_start();
 require_once('db.php');
-
+/*On fait une requête qui affiche tout les projets */
 $rqtP = "SELECT * FROM projet";
 
 $stmt = $pdo->prepare($rqtP);
 $stmt->execute();
-
+/*On fait une requête qui affiche tout les modaux */
 $rqtM = "SELECT * FROM modaux";
 
 $stmtM = $pdo->prepare($rqtM);
@@ -29,6 +29,7 @@ $stmtM->execute();
 <body>
 
 <header>
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
@@ -39,6 +40,7 @@ $stmtM->execute();
         <h1>Mes projets</h1>
         <div>
             <div class="ligne">
+                <!-- On affiche l'image de la compétence -->
                 <?php
                 while($c = $stmt->fetch(PDO::FETCH_ASSOC)){
                     echo "<img src='" . $c['logo'] . "' alt='" . $c['alt'] . "' data-toggle='modal' data-target='" . $c['data_target'] . "'/>";
@@ -48,7 +50,7 @@ $stmtM->execute();
             </div>
         </div>
 
-
+        <!-- On affiche le modal de la compétence-->
         <?php
         while($c = $stmtM->fetch(PDO::FETCH_ASSOC)){
             echo "<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true' id='" .  $c['id_mod'] ."'>";
@@ -72,7 +74,7 @@ $stmtM->execute();
     </div>
 
 </main>
-
+<!-- Footer -->
 <?php
     include('footer.php');
 ?>

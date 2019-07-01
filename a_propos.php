@@ -13,11 +13,13 @@
 <body>
 
 <header>
+    <!--navbar-->
     <?php
     include('nav.php');
     ?>
 </header>
 <main>
+    <!-- Cette div sert simplement à en dire plus sur moi -->
     <div class="categorie_texte">
         <h1>Qui suis-je ?</h1>
         <p> je m'appelle SEGUIN Ghislain, actuellement étudiant en première année d'informatique à Ynov Aix-en-Provence.
@@ -29,6 +31,7 @@
     <div class="bouton">
         <button class="bouton_propre" type="button" href="#" target="_blank">A propos</button>
     </div>
+    <!-- Cette div énumère mon parcours scolaire -->
     <div class="categorie_texte">
         <h1>Parcours</h1>
         <p> Lors de mon bac STI2D, j'ai pu commencer à développer ce qui m'a donné l'enguoument pour me lancer dans l'informatique.
@@ -37,14 +40,17 @@
             Ci-dessous vous pourrez retrouver mes compétences ou alors me contacter</p>
     </div>
     <div class="ligne">
+        <!-- Ce bouton redirige vers compétences -->
         <div class="bouton">
             <button class="bouton_propre" type="button" href="#" target="_blank">Compétences</button>
         </div>
+        <!-- Ce bouton redirige vers Contact -->
         <div class="bouton">
             <button class="bouton_propre" type="button" href="#" target="_blank">Contact</button>
         </div>
     </div>
 </main>
+<!-- Footer -->
 <?php
     include('footer.php');
 ?>

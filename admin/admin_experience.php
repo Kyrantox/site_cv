@@ -11,22 +11,25 @@ else{
     <html lang="fr">
 
     <head>
+        <!-- head -->
         <?php
         include("head.php");
         ?>
     </head>
 
     <body>
+    <!-- On inclut modexp -->
     <?php
     require_once("modExp.php");
     ?>
     <header>
+        <!-- navbar -->
         <?php include("nav_admin.php"); ?>
     </header>
 
     <main>
         <h1>Gérer les expériences professionnelles</h1>
-
+        <!-- On supprime une expérience -->
         <div class="suppcomp">
             <h2>Supprimer une expérience</h2>
             <form method="post" class="row" action="admin_experience.php">
@@ -50,7 +53,7 @@ else{
             }
             ?>
         </div>
-
+        <!-- On modifie une expérience -->
         <div class="modifcomp">
             <h2>Modifier une expérience</h2>
             <form action="admin_experience.php" method="post" enctype="multipart/form-data">
@@ -103,7 +106,7 @@ else{
             }
             ?>
         </div>
-
+        <!-- On ajoute une expérience -->
         <div class="ajoutcomp">
             <h2>Ajouter une expérience</h2>
             <form method="post" action="admin_experience.php" enctype="multipart/form-data">

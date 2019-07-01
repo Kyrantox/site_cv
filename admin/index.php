@@ -1,22 +1,12 @@
 <?php
 session_start();
 include_once('db.php');
-
-$rqt = "SELECT * FROM competences";
-
-try {
-    $stmt = $pdo->prepare($rqt);
-    $stmt->execute();
-} catch(Exception $e) {
-    $e->getMessage();
-}
-
-
 ?>
 
 
 <html lang="fr" class="height">
 <head>
+    <!--head-->
     <?php
     include("head.php");
     ?>
@@ -24,6 +14,7 @@ try {
 
 <body class="height">
 <header>
+    <!--navbar-->
     <?php include("nav_admin.php"); ?>
 </header>
 
@@ -66,7 +57,7 @@ try {
 
 
 
-
+    <!-- Ici on se deconnecte -->
     <?php
     if(isset($_SESSION['mdp']))
     {
@@ -84,6 +75,7 @@ try {
             </form>
 
         </div>
+        <!-- Ici on se connecte -->
         <?php
     }
 

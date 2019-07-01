@@ -1,5 +1,7 @@
 /*Des borders seront utilisés pour les vérifications, puis laissés commentés paar la suite*/
 
+/* On set un "thème" principal */
+
 body{
     display: flex;
     flex-direction: column;
@@ -123,6 +125,8 @@ header {
     color: black;
 }
 
+/* Le bouton rouge trop bien qui change de couleur */
+
 .bouton{
     margin : 0 20px 20px 20px;
 }
@@ -188,6 +192,8 @@ header {
     border-bottom: 1px solid black;
 }
 
+/* CSS de la nav */
+
 #liste-menu{
     display: flex;
     flex-direction: row-reverse;
@@ -199,6 +205,8 @@ header {
     font-family: "Rubik", "Oswald", sans-serif;
     font-weight: bold;
 }
+
+/* On continue le "thème" */
 
 #prenom{
     font-size: 300%;
@@ -225,7 +233,7 @@ header {
 }
 
 
-
+/* le sticky est pour la nav */
 #sticky{
     display: flex;
     margin-top: 20px;
@@ -234,6 +242,8 @@ header {
     width: 100%;
     text-transform: uppercase;
 }
+
+/* Tire de la nav*/
 
 #titre{
     font-family: "Rubik", "Oswald", sans-serif;
@@ -249,9 +259,12 @@ header {
     line-height: 1.8;
 }
 
+/* C'est toujours pour mes bouton trop bien*/
 .btn-secondary:hover{
     color: #DE1F1F;
 }
+
+/* Mise en forme du texte dans compétence / projet etc... */
 
 .categorie{
     margin-bottom: 50px;
@@ -307,6 +320,8 @@ header {
     background-color: #333;
 }
 
+/* Ici on fait les flip card du portfolio */
+
 @font-face {
     font-family: "Rubik";
     src: url("Rubik-Regular.ttf");
@@ -352,6 +367,13 @@ header {
     transform: rotateY(180deg);
 }
 
+.taille_flip{
+    width:200px;
+    height:200px;
+}
+
+/* Les 4 suivant servent pour la page de contact */
+
 * {
     box-sizing: border-box;
 }
@@ -383,6 +405,8 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }*/
+
+/* Mise en place de deux colonnes pour aligner correctement les noms et les inputs */
 
 .bloc {
     border-radius: 5px;
@@ -424,10 +448,7 @@ input[type=submit]:hover {
     }
 }
 
-.taille_flip{
-    width:200px;
-    height:200px;
-}
+
 
 /* Dropdown Button */
 .dropbtn {
@@ -474,6 +495,8 @@ input[type=submit]:hover {
     color: black;
 }
 
+/* Le CSS de ma nav admin*/
+
 #button_admin {
     height: 40px;
     width: 40px;
@@ -497,74 +520,3 @@ input[type=submit]:hover {
 #adminav{
     color:red;
 }
-
-/* test */
-
-/*.sticky {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    border-top: 0;
-    height: 50px !important;
-}
-
-.hero-profile {
-    width: 100%;
-    height: 50px;
-}
-
-.nav-header {
-    height: 10vh;
-    width: 100%;
-    background-color: #f8bb15;
-    z-index: 9999;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-.nav-header .nav-menu {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    padding-top: 15px;
-    font-size: 18px;
-    color: #fff;
-}
-
-.hero-area {
-    height: 90vh;
-    width: 100%;
-    min-width: 600px;
-    background-color: #484248;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.hero-social-buttons {
-    margin-top: 30px;
-}
-
-#hero {
-    padding-top: 20px;
-    color: #fff;
-    font-family: Roboto;
-}
-#hero > .hero-main {
-    margin-top: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#hero > .hero-main .hero-img > img {
-    height: 150px;
-    width: 150px;
-    margin: 10px 25px;
-    border: 1px solid #f8bb15;
-    border-radius: 85px;
-}
-#hero > .hero-main .hero-text {
-    font-size: 56px;
-}
-#hero > .hero-main .hero-text .hero-text-detail {
-    font-size: 12px;
-}*/
