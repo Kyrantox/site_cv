@@ -1,18 +1,3 @@
-<?php
-session_start();
-require_once('db.php');
-/*On fait deux requêtes qui affichent toute les compétences selon leurs types */
-$rqtUC1 = "SELECT * FROM competence WHERE id_type=1";
-$rqtUC2 = "SELECT * FROM competence WHERE id_type=2";
-
-$stmt1 = $pdo->prepare($rqtUC1);
-$stmt1->execute();
-
-$stmt2 = $pdo->prepare($rqtUC2);
-$stmt2->execute();
-
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,7 +13,6 @@ $stmt2->execute();
 <body>
 
 <header>
-    <!--navbar-->
     <?php
     include('nav.php');
     ?>
@@ -39,32 +23,42 @@ $stmt2->execute();
 <div id="competences">
     <h1>Compétences</h1>
     <div class="ligne">
-    <!-- On afficher les compétences -->
-    <?php
-    while($c = $stmt1->fetch(PDO::FETCH_ASSOC)){
-        echo "<div class='col'>";
-            echo "<img src='" . $c['logo'] . "' alt='" . $c['alt'] . "'/>";
-            echo "<h2>" . $c['libelle'] . "</h2>";
-        echo "</div>";
-    }
-    ?>
+        <div class="col">
+            <a href="#"><img src="logo.png" alt="HTML/CSS"></a>
+            <h2>HTML/CSS</h2>
+        </div>
+        <div class="col">
+            <a href="#"><img src="logo.png" alt="PHP"></a>
+            <h2>PHP</h2>
+        </div>
+        <div class="col">
+            <a href="#"><img src="logo.png" alt="Javascript"></a>
+            <h2>Javascript</h2>
+        </div>
+    </div>
+    <div class="ligne">
+        <div class="col">
+            <a href="#"><img src="logo.png" alt="C"></a>
+            <h2>C</h2>
+        </div>
+        <div class="col">
+        <a href="#"><img src="logo.png" alt="Python"></a>
+        <h2>python</h2>
+        </div>
+        <div class="col">
+        <a href="#"><img src="logo.png" alt="Infrastructure et réseaux"></a>
+        <h2>Infrastructure et réseaux</h2>
+        </div>
     </div>
 </div>
 
 <div id="certification">
-    <h1>Certifications</h1>
-    <!-- on affiche les Certification -->
-    <?php
-    while($c = $stmt2->fetch(PDO::FETCH_ASSOC)){
-        echo "<a href='" . $c['href'] . "' target='_blank'>";
-        echo "<img src='" . $c['logo'] . "' alt='" . $c['alt'] . "'/>";
-        echo "</a>";
-    }
-    ?>
+    <h1>Certification</h1>
+    <a href="Docs/ccna.pdf" target="_blank"><img src="CCNA_certif.png" alt="CCNA 1"></a>
 </div>
 
 </main>
-<!-- Footer-->
+
 <?php
     include('footer.php');
 ?>

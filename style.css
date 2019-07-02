@@ -1,7 +1,5 @@
 /*Des borders seront utilisés pour les vérifications, puis laissés commentés paar la suite*/
 
-/* On set un "thème" principal */
-
 body{
     display: flex;
     flex-direction: column;
@@ -61,7 +59,7 @@ h3{
 }
 
 img{
-    width: auto;
+    width: 200px;
     height: 200px;
     filter: grayscale(100%);
     transition: all 0.3s ease-in-out;
@@ -78,10 +76,6 @@ main{
     justify-content: center;
     text-align: center;
     width: 100%;
-}
-
-form{
-    color: black;
 }
 
 nav{
@@ -121,11 +115,9 @@ header {
     width: 100%;
 }
 
-#idormdp{
-    color: black;
-}
+#competence {
 
-/* Le bouton rouge trop bien qui change de couleur */
+}
 
 .bouton{
     margin : 0 20px 20px 20px;
@@ -192,8 +184,6 @@ header {
     border-bottom: 1px solid black;
 }
 
-/* CSS de la nav */
-
 #liste-menu{
     display: flex;
     flex-direction: row-reverse;
@@ -205,8 +195,6 @@ header {
     font-family: "Rubik", "Oswald", sans-serif;
     font-weight: bold;
 }
-
-/* On continue le "thème" */
 
 #prenom{
     font-size: 300%;
@@ -233,17 +221,15 @@ header {
 }
 
 
-/* le sticky est pour la nav */
+
 #sticky{
     display: flex;
     margin-top: 20px;
-    margin-right: 14%;
-    margin-left: 14%;
+    margin-right: 15%;
+    margin-left: 15%;
     width: 100%;
     text-transform: uppercase;
 }
-
-/* Tire de la nav*/
 
 #titre{
     font-family: "Rubik", "Oswald", sans-serif;
@@ -259,12 +245,9 @@ header {
     line-height: 1.8;
 }
 
-/* C'est toujours pour mes bouton trop bien*/
 .btn-secondary:hover{
     color: #DE1F1F;
 }
-
-/* Mise en forme du texte dans compétence / projet etc... */
 
 .categorie{
     margin-bottom: 50px;
@@ -291,7 +274,6 @@ header {
     justify-content: space-evenly;
     /*align-items: center;*/
     margin-bottom: 50px;
-    flex-wrap: wrap;
 }
 
 .mobile-toggle {
@@ -320,8 +302,6 @@ header {
     background-color: #333;
 }
 
-/* Ici on fait les flip card du portfolio */
-
 @font-face {
     font-family: "Rubik";
     src: url("Rubik-Regular.ttf");
@@ -333,8 +313,6 @@ header {
     width: 300px;
     height: 200px;
     perspective: 1000px; /* Effet 3D */
-    border: none;
-    cursor: pointer;
 }
 
 .flip-card-inner {
@@ -362,23 +340,15 @@ header {
 }
 
 .flip-card-back {
-    background-color: white;
-    color: black;
+    color: white;
     transform: rotateY(180deg);
 }
-
-.taille_flip{
-    width:200px;
-    height:200px;
-}
-
-/* Les 4 suivant servent pour la page de contact */
 
 * {
     box-sizing: border-box;
 }
 
-input[type=text], input[type=email], input[type=tel], select, textarea {
+input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -392,21 +362,18 @@ label {
 }
 
 input[type=submit] {
-   /* background-color: #4CAF50;
+    background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;*/
+    cursor: pointer;
     float: right;
 }
 
-/*
 input[type=submit]:hover {
     background-color: #45a049;
-}*/
-
-/* Mise en place de deux colonnes pour aligner correctement les noms et les inputs */
+}
 
 .bloc {
     border-radius: 5px;
@@ -448,7 +415,10 @@ input[type=submit]:hover {
     }
 }
 
-
+.taille_flip{
+    width:200px;
+    height:200px;
+}
 
 /* Dropdown Button */
 .dropbtn {
@@ -491,32 +461,74 @@ input[type=submit]:hover {
     display: block;
 }
 
-.nomFormulaire{
-    color: black;
+
+/* test */
+
+/*.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+    height: 50px !important;
 }
 
-/* Le CSS de ma nav admin*/
-
-#button_admin {
-    height: 40px;
-    width: 40px;
+.hero-profile {
+    width: 100%;
+    height: 50px;
 }
 
-#deconnect{
-    border: none;
-    background-image: url('Logo/admin.png');
-    background-repeat:no-repeat;
-    background-position:top left;
+.nav-header {
+    height: 10vh;
+    width: 100%;
+    background-color: #f8bb15;
+    z-index: 9999;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.nav-header .nav-menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    padding-top: 15px;
+    font-size: 18px;
+    color: #fff;
 }
 
-#button_admin:hover{
-    filter: grayscale(100%);
+.hero-area {
+    height: 90vh;
+    width: 100%;
+    min-width: 600px;
+    background-color: #484248;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.admin{
-    color: black!important;
+
+.hero-social-buttons {
+    margin-top: 30px;
 }
 
-#adminav{
-    color:red;
+#hero {
+    padding-top: 20px;
+    color: #fff;
+    font-family: Roboto;
 }
+#hero > .hero-main {
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hero > .hero-main .hero-img > img {
+    height: 150px;
+    width: 150px;
+    margin: 10px 25px;
+    border: 1px solid #f8bb15;
+    border-radius: 85px;
+}
+#hero > .hero-main .hero-text {
+    font-size: 56px;
+}
+#hero > .hero-main .hero-text .hero-text-detail {
+    font-size: 12px;
+}*/

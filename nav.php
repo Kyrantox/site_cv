@@ -16,7 +16,6 @@
                 </div>
                 <li><a href="Competence.php">Compétences</a></li>
                 <li><a href="Contact.php">Contact</a></li>
-                <li><a href="admin/index.php"><img src="Logo/admin.png" id="button_admin"></a></li>
             </ul>
         </div>
     </div>
