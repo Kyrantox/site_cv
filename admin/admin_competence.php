@@ -144,6 +144,17 @@ require_once("modComp.php");
             </div>
 
             <div>
+                <p>Fichier à lier :</p>
+                <input type="hidden" name="MAX_FILE_SIZE" value="120000000000" />
+                <input type="file" name="AddCompHref" accept="application/pdf">
+            </div>
+
+            <div>
+                <p>Href :</p>
+                <textarea maxlength="50" name="AddCompHrefTxt"></textarea>
+            </div>
+
+            <div>
                 <p>Alt :</p>
                 <textarea maxlength="50" name="AddCompAlt"></textarea>
             </div>

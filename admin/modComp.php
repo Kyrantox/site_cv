@@ -115,11 +115,22 @@ if(isset($_SESSION['mdp'])) {
         if ($_POST['AddCompType'] == "") {
             $_POST['AddCompType'] = NULL;
         }
+        if ($_POST['AddCompHrefTxt'] == "") {
+            $_POST['AddCompHrefTxt'] = NULL;
+        }
         if ($_FILES['AddCompImg']['name'] == "") {
             $_FILES['AddCompImg']['name'] = NULL;
         }
-        if (isset($_POST['AddCompTitre']) && isset($_POST['AddCompAlt']) && isset($_POST['AddCompType']) && isset($_FILES['AddCompImg']['name'])) {
+        if ($_FILES['AddCompHref']['name'] == "") {
+            $_FILES['AddCompHref']['name'] = NULL;
+        }
+        if (isset($_POST['AddCompTitre']) && isset($_POST['AddCompAlt']) && isset($_POST['AddCompHrefTxt']) && isset($_POST['AddCompType']) && isset($_FILES['AddCompImg']['name']) && isset($_FILES['AddCompHref']['name'])) {
             $uploaddir = '../Logo/';
+            $uploaddirpdf = '../Docs/';
+            $nompdf = htmlspecialchars($_POST['AddCompHrefTxt']);
+            $nomMinPDF = mb_strtolower(($nompdf));
+            $uploadfilepdf = $uploaddirpdf . $nomMinPDF . ".pdf";
+            $uploadfilepdfname = 'Docs/' . $nomMinPDF . '.pdf';
             $nomComp = htmlspecialchars($_POST['AddCompTitre']);
             $nomMin = mb_strtolower($nomComp);
             $uploadfile = $uploaddir . $nomMin . ".png";
@@ -130,9 +141,9 @@ if(isset($_SESSION['mdp'])) {
             $rqt->execute(array($nomComp));
             $compExists = $rqt->rowcount();
             if ($compExists == 0) {
-                if (move_uploaded_file($_FILES['AddCompImg']['tmp_name'], $uploadfile)) {
-                    $rqt = $pdo->prepare('INSERT INTO competence(libelle,alt,id_type, logo) VALUES (?, ?, ?, ?)');
-                    $rqt->execute(array($nomComp, $thealt, $cat, $uploadfilename));
+                if (move_uploaded_file($_FILES['AddCompImg']['tmp_name'], $uploadfile) && move_uploaded_file($_FILES['AddCompHref']['tmp_name'], $uploadfilepdf)) {
+                    $rqt = $pdo->prepare('INSERT INTO competence(libelle,alt,id_type, logo, href) VALUES (?, ?, ?, ?, ?)');
+                    $rqt->execute(array($nomComp, $thealt, $cat, $uploadfilename, $uploadfilepdfname));
                     $messageAdd = 'Ok, compétence' . $nomComp . 'ajoutée';
                 } else {
                     echo "Erreur envoi image : " . $_FILES['AddCompImg']['error'];
